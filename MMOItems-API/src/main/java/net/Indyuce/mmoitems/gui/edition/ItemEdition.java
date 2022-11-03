@@ -43,7 +43,7 @@ public class ItemEdition extends EditionInventory {
 		List<ItemStat> appliable = new ArrayList<>(getEdited().getType().getAvailableStats()).stream()
 				.filter(stat -> stat.hasValidMaterial(getCachedItem()) && !(stat instanceof InternalStat)).collect(Collectors.toList());
 
-		Inventory inv = Bukkit.createInventory(this, 54, "Item Edition: " + getEdited().getId());
+		Inventory inv = Bukkit.createInventory(this, 54, "物品编辑: " + getEdited().getId());
 		for (int j = min; j < Math.min(appliable.size(), max); j++) {
 			ItemStat stat = appliable.get(j);
 			ItemStack item = new ItemStack(stat.getDisplayMaterial());
@@ -64,17 +64,17 @@ public class ItemEdition extends EditionInventory {
 
 		ItemStack glass = VersionMaterial.GRAY_STAINED_GLASS_PANE.toItem();
 		ItemMeta glassMeta = glass.getItemMeta();
-		glassMeta.setDisplayName(ChatColor.RED + "- No Item Stat -");
+		glassMeta.setDisplayName(ChatColor.RED + "- 没有物品统计 -");
 		glass.setItemMeta(glassMeta);
 
 		ItemStack next = new ItemStack(Material.ARROW);
 		ItemMeta nextMeta = next.getItemMeta();
-		nextMeta.setDisplayName(ChatColor.GREEN + "Next Page");
+		nextMeta.setDisplayName(ChatColor.GREEN + "下一页");
 		next.setItemMeta(nextMeta);
 
 		ItemStack previous = new ItemStack(Material.ARROW);
 		ItemMeta previousMeta = previous.getItemMeta();
-		previousMeta.setDisplayName(ChatColor.GREEN + "Previous Page");
+		previousMeta.setDisplayName(ChatColor.GREEN + "上一页");
 		previous.setItemMeta(previousMeta);
 
 		addEditionInventoryItems(inv, true);
@@ -97,12 +97,12 @@ public class ItemEdition extends EditionInventory {
 		if (!MMOUtils.isMetaItem(item, false) || event.getInventory().getItem(4) == null)
 			return;
 
-		if (item.getItemMeta().getDisplayName().equals(ChatColor.GREEN + "Next Page")) {
+		if (item.getItemMeta().getDisplayName().equals(ChatColor.GREEN + "下一页")) {
 			page++;
 			open();
 		}
 
-		if (item.getItemMeta().getDisplayName().equals(ChatColor.GREEN + "Previous Page")) {
+		if (item.getItemMeta().getDisplayName().equals(ChatColor.GREEN + "上一页")) {
 			page--;
 			open();
 		}

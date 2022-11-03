@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UpgradingEdition extends EditionInventory {
-	private static final ItemStack notAvailable = new NamedItemStack(VersionMaterial.RED_STAINED_GLASS_PANE.toMaterial(), "&cNot Available");
+	private static final ItemStack notAvailable = new NamedItemStack(VersionMaterial.RED_STAINED_GLASS_PANE.toMaterial(), "&c无法使用");
 
 	public UpgradingEdition(Player player, MMOItemTemplate template) {
 		super(player, template);
@@ -32,22 +32,22 @@ public class UpgradingEdition extends EditionInventory {
 
 	@Override
 	public Inventory getInventory() {
-		Inventory inv = Bukkit.createInventory(this, 54, "Upgrade Setup: " + template.getId());
+		Inventory inv = Bukkit.createInventory(this, 54, "升级设置: " + template.getId());
 
 		boolean workbench = getEditedSection().getBoolean("upgrade.workbench");
 		if (!template.getType().corresponds(Type.CONSUMABLE)) {
 
 			ItemStack workbenchItem = new ItemStack(VersionMaterial.CRAFTING_TABLE.toMaterial());
 			ItemMeta workbenchItemMeta = workbenchItem.getItemMeta();
-			workbenchItemMeta.setDisplayName(ChatColor.GREEN + "Workbench Upgrade Only?");
+			workbenchItemMeta.setDisplayName(ChatColor.GREEN + "仅工作台升级?");
 			List<String> workbenchItemLore = new ArrayList<>();
 			workbenchItemLore.add(ChatColor.GRAY + "When toggled on, players must");
 			workbenchItemLore.add(ChatColor.GRAY + "use a crafting station recipe in");
 			workbenchItemLore.add(ChatColor.GRAY + "order to upgrade their weapon.");
 			workbenchItemLore.add("");
-			workbenchItemLore.add(ChatColor.GRAY + "Current Value: " + ChatColor.GOLD + workbench);
+			workbenchItemLore.add(ChatColor.GRAY + "当前值: " + ChatColor.GOLD + workbench);
 			workbenchItemLore.add("");
-			workbenchItemLore.add(ChatColor.YELLOW + AltChar.listDash + " Click to change this value.");
+			workbenchItemLore.add(ChatColor.YELLOW + AltChar.listDash + " 点击以更改此值.");
 			workbenchItemMeta.setLore(workbenchItemLore);
 			workbenchItem.setItemMeta(workbenchItemMeta);
 			inv.setItem(20, workbenchItem);
@@ -55,16 +55,16 @@ public class UpgradingEdition extends EditionInventory {
 			String upgradeTemplate = getEditedSection().getString("upgrade.template");
 			ItemStack templateItem = new ItemStack(VersionMaterial.OAK_SIGN.toMaterial());
 			ItemMeta templateItemMeta = templateItem.getItemMeta();
-			templateItemMeta.setDisplayName(ChatColor.GREEN + "Upgrade Template");
+			templateItemMeta.setDisplayName(ChatColor.GREEN + "升级模板");
 			List<String> templateItemLore = new ArrayList<>();
 			templateItemLore.add(ChatColor.GRAY + "This option dictates what stats are improved");
 			templateItemLore.add(ChatColor.GRAY + "when your item is upgraded. More info on the wiki.");
 			templateItemLore.add("");
-			templateItemLore.add(ChatColor.GRAY + "Current Value: "
-					+ (upgradeTemplate == null ? ChatColor.RED + "No template" : ChatColor.GOLD + upgradeTemplate));
+			templateItemLore.add(ChatColor.GRAY + "当前值: "
+					+ (upgradeTemplate == null ? ChatColor.RED + "没有模板" : ChatColor.GOLD + upgradeTemplate));
 			templateItemLore.add("");
-			templateItemLore.add(ChatColor.YELLOW + AltChar.listDash + " Click to input the template.");
-			templateItemLore.add(ChatColor.YELLOW + AltChar.listDash + " Right click to reset.");
+			templateItemLore.add(ChatColor.YELLOW + AltChar.listDash + " 点击输入模板.");
+			templateItemLore.add(ChatColor.YELLOW + AltChar.listDash + " 右键点击重置.");
 			templateItemMeta.setLore(templateItemLore);
 			templateItem.setItemMeta(templateItemMeta);
 			inv.setItem(22, templateItem);
@@ -72,15 +72,15 @@ public class UpgradingEdition extends EditionInventory {
 			int max = getEditedSection().getInt("upgrade.max");
 			ItemStack maxItem = new ItemStack(Material.BARRIER);
 			ItemMeta maxItemMeta = maxItem.getItemMeta();
-			maxItemMeta.setDisplayName(ChatColor.GREEN + "Max Upgrades");
+			maxItemMeta.setDisplayName(ChatColor.GREEN + "最大升级");
 			List<String> maxItemLore = new ArrayList<>();
 			maxItemLore.add(ChatColor.GRAY + "The maximum amount of upgrades your");
 			maxItemLore.add(ChatColor.GRAY + "item may receive (recipe or consumable).");
 			maxItemLore.add("");
-			maxItemLore.add(ChatColor.GRAY + "Current Value: " + (max == 0 ? ChatColor.RED + "No limit" : ChatColor.GOLD + "" + max));
+			maxItemLore.add(ChatColor.GRAY + "当前值: " + (max == 0 ? ChatColor.RED + "No limit" : ChatColor.GOLD + "" + max));
 			maxItemLore.add("");
-			maxItemLore.add(ChatColor.YELLOW + AltChar.listDash + " Click to chance this value.");
-			maxItemLore.add(ChatColor.YELLOW + AltChar.listDash + " Right click to reset.");
+			maxItemLore.add(ChatColor.YELLOW + AltChar.listDash + " 点击获取此值.");
+			maxItemLore.add(ChatColor.YELLOW + AltChar.listDash + " 右键点击重置.");
 			maxItemMeta.setLore(maxItemLore);
 			maxItem.setItemMeta(maxItemMeta);
 			inv.setItem(40, maxItem);
@@ -88,15 +88,15 @@ public class UpgradingEdition extends EditionInventory {
 			int min = getEditedSection().getInt("upgrade.min", 0);
 			ItemStack minItem = new ItemStack(Material.BARRIER);
 			ItemMeta minItemMeta = minItem.getItemMeta();
-			minItemMeta.setDisplayName(ChatColor.GREEN + "Min Upgrades");
+			minItemMeta.setDisplayName(ChatColor.GREEN + "最小升级");
 			List<String> minItemLore = new ArrayList<>();
 			minItemLore.add(ChatColor.GRAY + "The minimum level your item can be");
 			minItemLore.add(ChatColor.GRAY + "downgraded to (by dying or breaking).");
 			minItemLore.add("");
-			minItemLore.add(ChatColor.GRAY + "Current Value: " + (min == 0 ? ChatColor.RED + "0" : ChatColor.GOLD + String.valueOf(min)));
+			minItemLore.add(ChatColor.GRAY + "当前值: " + (min == 0 ? ChatColor.RED + "0" : ChatColor.GOLD + String.valueOf(min)));
 			minItemLore.add("");
-			minItemLore.add(ChatColor.YELLOW + AltChar.listDash + " Click to chance this value.");
-			minItemLore.add(ChatColor.YELLOW + AltChar.listDash + " Right click to reset.");
+			minItemLore.add(ChatColor.YELLOW + AltChar.listDash + " 点击获取此值.");
+			minItemLore.add(ChatColor.YELLOW + AltChar.listDash + " 右键点击重置.");
 			minItemMeta.setLore(minItemLore);
 			minItem.setItemMeta(minItemMeta);
 			inv.setItem(41, minItem);
@@ -119,10 +119,10 @@ public class UpgradingEdition extends EditionInventory {
 			referenceItemLore.add(ChatColor.GRAY + "so any consumable can upgrade this item.");
 			referenceItemLore.add("");
 			referenceItemLore
-					.add(ChatColor.GRAY + "Current Value: " + (reference == null ? ChatColor.RED + "No reference" : ChatColor.GOLD + reference));
+					.add(ChatColor.GRAY + "当前值: " + (reference == null ? ChatColor.RED + "No reference" : ChatColor.GOLD + reference));
 			referenceItemLore.add("");
-			referenceItemLore.add(ChatColor.YELLOW + AltChar.listDash + " Click to input the reference.");
-			referenceItemLore.add(ChatColor.YELLOW + AltChar.listDash + " Right click to reset.");
+			referenceItemLore.add(ChatColor.YELLOW + AltChar.listDash + " 单击输入参考.");
+			referenceItemLore.add(ChatColor.YELLOW + AltChar.listDash + " 右键点击重置.");
 			referenceItemMeta.setLore(referenceItemLore);
 			referenceItem.setItemMeta(referenceItemMeta);
 			inv.setItem(38, referenceItem);
