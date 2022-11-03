@@ -1,4 +1,5 @@
 Official repository for MMOItems Premium
+插件内置汉化储存库
 
 ### Using MMOItems as dependency
 Register the PhoenixDev repo
