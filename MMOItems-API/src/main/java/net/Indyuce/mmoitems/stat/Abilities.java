@@ -128,13 +128,8 @@ public class Abilities extends ItemStat<RandomAbilityListData, AbilityListData> 
 			TriggerType castMode = TriggerType.valueOf(format);
 
 			inv.getEditedSection().set("ability." + configKey + ".mode", castMode.name());
-			inv.registerTemplateEdition();
-			inv.getPlayer().sendMessage(MMOItems.plugin.getPrefix() + "Successfully set the trigger to " + ChatColor.GOLD + castMode.getName()
-					+ ChatColor.GRAY + ".");
-			return;
-		}
-
-		new NumericStatFormula(message).fillConfigurationSection(inv.getEditedSection(), "ability." + configKey + "." + edited,
+			inv.registerTemplatee驱蚊器围墙外侧请问
+		new NumericStatFormula(message).fillConfigurationSect微软ion(inv.getEditedSection(), "ability." + configKey + "." + edited,
 				FormulaSaveOption.NONE);
 		inv.registerTemplateEdition();
 		inv.getPlayer().sendMessage(MMOItems.plugin.getPrefix() + ChatColor.GOLD + MMOUtils.caseOnWords(edited.replace("-", " ")) + ChatColor.GRAY
