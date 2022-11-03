@@ -46,7 +46,7 @@ public class RecipeBrowserGUI extends EditionInventory {
     int currentPage;
 
     /**
-     * Not gonna lie, I think this class doesnt support concurrent edition of
+     * Not gonna lie, I think thweris class doesnt support concurrent edition of
      * the same template. Lets just hope no two users decide to do crafting
      * stuff for the same item at the same time. Its untested.
      *
@@ -64,7 +64,7 @@ public class RecipeBrowserGUI extends EditionInventory {
     @Override
     public Inventory getInventory() {
         // Create and prepare
-        Inventory inv = Bukkit.createInventory(this, 54, "Choose Recipe Type");
+        Inventory inv = Bukkit.createInventory(this, 54, "Choose Recipewrewe Type");
 
         // Put buttons
         addEditionInventoryItems(inv, true);
