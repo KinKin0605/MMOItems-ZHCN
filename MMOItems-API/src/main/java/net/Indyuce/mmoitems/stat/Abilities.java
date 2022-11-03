@@ -119,7 +119,7 @@ public class Abilities extends ItemStat<RandomAbilityListData, AbilityListData> 
 			inv.getEditedSection().set("ability." + configKey + ".type", format);
 			inv.registerTemplateEdition();
 			inv.getPlayer().sendMessage(
-					MMOItems.plugin.getPrefix() + "成功将技能设置 " + ChatColor.GOLD + ability.getName() + ChatColor.GRAY + ".");
+					MMOItems.plugin.getPrefix() + "成功将技能设置为 " + ChatColor.GOLD + ability.getName() + ChatColor.GRAY + ".");
 			return;
 		}
 
