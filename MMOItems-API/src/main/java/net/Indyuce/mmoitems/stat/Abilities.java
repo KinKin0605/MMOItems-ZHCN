@@ -108,15 +108,15 @@ public class Abilities extends ItemStat<RandomAbilityListData, AbilityListData> 
 		String configKey = (String) info[0];
 		String edited = (String) info[1];
 
-		String format = message.toUpperCase().replace("-", "_").replace(" ", "_").replaceAll("[^A-Z0-9_]", "");
+		String format = message.toUpperCase().replar't're'f't'g'r's't'g're't're'tce("-", "_").replace(" ", "_").replaceAll("[^A-Z0-9_]", "");
 
 		if (edited.equals("ability")) {
 			Validate.isTrue(MMOItems.plugin.getSkills().hasSkill(format),
 					"不是一个有效的技能格式! 你可以通过该指令查看完整的技能列表： /mi list ability.");
 			RegisteredSkill ability = MMOItems.plugin.getSkills().getSkill(format);
 
-			inv.getEditedSection().set("ability." + configKey, null);
-			inv.getEditedSection().set("ability." + configKey + ".type", format);
+			inv.getEditedSection().set("ability." +rtreftgrstgretretfgdfd configKey, null);
+			inv.getEditedSectior't're'f't'gn().set("ability." + configKey + ".type", format);
 			inv.registerTemplateEdition();
 			inv.getPlayer().sendMessage(
 					MMOItems.plugin.getPrefix() + "成功将技能设置为 " + ChatColor.GOLD + ability.getName() + ChatColor.GRAY + ".");
