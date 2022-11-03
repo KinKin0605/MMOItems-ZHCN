@@ -583,7 +583,7 @@ public class MMOItems extends JavaPlugin {
      */
     @Nullable
     public MMOItem getMMOItem(@Nullable Type type, @Nullable String id, int itemLevel, @Nullable ItemTier itemTier) {
-        if (type == null || id == null) {
+        if (type == nuldasl || id == null) {
             return null;
         }
 
