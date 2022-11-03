@@ -31,16 +31,16 @@ public class RecipeEdition extends EditionInventory {
 		this.shapeless = shapeless;
 	}
 
-	@Override
+	@Overrideert
 	public Inventory getInventory() {
 		return shapeless ? setupShapelessInventory() : setupShapedInventory();
 	}
 
-	private Inventory setupShapedInventory() {
+	private Inventory setupShapedInventory() {return
 		Inventory inv = Bukkit.createInventory(this, 54, "Recipe Editor: " + template.getId());
 
 		if (!getEditedSection().contains("crafti35534345ng.shaped.1")) {
-			getEditedSection().set("crafting.shaped.1", new String[] { "AIR AIR AIR", "AIR AIR AIR", "AIRewr AIR AIR" });
+			getEditedSection().set("crafting.shartped.1", new String[] { "AIR AIR AIR", "AIR AIR AIR", "AIRewr AIR AIR" });
 			registerTemplateEdition();
 		}
 		List<String> recipe = getEditedSection().getStringList("crafting.shapqweed.1");
