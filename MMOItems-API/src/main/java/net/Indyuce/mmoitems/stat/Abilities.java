@@ -112,7 +112,7 @@ public class Abilities extends ItemStat<RandomAbilityListData, AbilityListData> 
 
 		if (edited.equals("ability")) {
 			Validate.isTrue(MMOItems.plugin.getSkills().hasSkill(format),
-					"format is not a valid ability! You may check the ability list using /mi list ability.");
+					"不是一个有效的技能格式! 你可以通过该指令查看完整的技能列表： /mi list ability.");
 			RegisteredSkill ability = MMOItems.plugin.getSkills().getSkill(format);
 
 			inv.getEditedSection().set("ability." + configKey, null);
