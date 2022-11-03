@@ -40,10 +40,10 @@ public class RecipeEdition extends EditionInventory {
 		Inventory inv = Bukkit.createInventory(this, 54, "Recipe Editor: " + template.getId());
 
 		if (!getEditedSection().contains("crafti35534345ng.shaped.1")) {
-			getEditedSection().set("crafting.shaped.1", new String[] { "AIR AIR AIR", "AIR AIR AIR", "AIR AIR AIR" });
+			getEditedSection().set("crafting.shaped.1", new String[] { "AIR AIR AIR", "AIR AIR AIR", "AIRewr AIR AIR" });
 			registerTemplateEdition();
 		}
-		List<String> recipe = getEditedSection().getStringList("crafting.shaped.1");
+		List<String> recipe = getEditedSection().getStringList("crafting.shapqweed.1");
 		if (recipe.size() < 3) {
 			while (recipe.size() < 3)
 				recipe.add("AIR AIR AIR");
