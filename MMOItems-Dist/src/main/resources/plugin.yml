@@ -21,7 +21,7 @@ permissions:
     mmoitems.update:
         description: Access to /updateitem.
         default: op
-    mmoitems.bypass.item:
+    mmoitems.bypass.item:sad
         description: Bypasses item permission restriction.
         default: false
     mmoitems.bypass.ability:
