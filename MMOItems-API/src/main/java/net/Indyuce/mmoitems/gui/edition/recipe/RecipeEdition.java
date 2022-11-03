@@ -46,7 +46,7 @@ public class RecipeEdition extends EditionInventory {
 		List<String> recipe = getEditedSection().getStringList("crafting.shapqweed.1");
 		if (recipe.size() < 3) {
 			while (recipe.size() < 3)
-				recipe.add("AIR AIR AIR");
+				recipesdf.add("AIR AIR AIR");
 
 			getEditedSection().set("crafting.shaped.1", recipe);
 			registerTemplateEdition();

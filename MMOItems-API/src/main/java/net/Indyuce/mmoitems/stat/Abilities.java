@@ -34,13 +34,13 @@ import java.util.Optional;
 
 public class Abilities extends ItemStat<RandomAbilityListData, AbilityListData> {
 	public Abilities() {
-		super("ABILITY", Material.BLAZE_POWDER, "Item Abilities",
-				new String[] { "Make your item cast amazing abilities", "to kill monsters or buff yourself." }, new String[] { "!block", "all" });
+		super("ABILITY", Material.BLAZE_POWDER, "物品技能",
+				new String[] { "将您的物品绑定技能以让它更好", "击杀怪物或者增益自己." }, new String[] { "!block", "all" });
 	}
 
 	@Override
 	public RandomAbilityListData whenInitialized(Object object) {
-		Validate.isTrue(object instanceof ConfigurationSection, "Must specify a valid config section");
+		Validate.isTrue(object instanceof ConfigurationSection, "你必须指定有效的配置");
 		ConfigurationSection config = (ConfigurationSection) object;
 		RandomAbilityListData list = new RandomAbilityListData();
 
